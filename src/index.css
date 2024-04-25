@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* this css property used in checkout Page */
+
+.inputs {
+    background: 0;
+    border: 0;
+    outline: none;
+    width: 70vw;
+    max-width: 400px;
+    font-size: 01em;
+    transition: padding 0.3s 0.2s ease;
+  }
+  .inputs:focus {
+    padding-bottom: 3px;
+  }
+  .inputs:focus + .line:after {
+    transform: scaleX(1);
+  }
+  .field {
+    position: relative;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 400px;
+  }
+  .field .line {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -8px;
+    background: #bdc3c7;
+  }
+  .field .line:after {
+    content: " ";
+    position: absolute;
+    float: right;
+    width: 100%;
+    height: 1px;
+    transform: scalex(0);
+    transition: transform 0.3s ease;
+    background: gray;
+  }
+
+  @media only screen and (max-width: 600px) and (min-width: 350px)  {
+      .inputs{
+        width: 300px;
+        max-width: 300px;
+        font-size: 1em;
+        transition: padding 0.3s 0.2s ease;
+      }
+      .field {
+         
+        margin-top: 25px;
+        margin-left: 0px;
+        width: 280px;
+      }
+  }
+
+
+  /* // Spinner  */
+  .spinner {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    border: 4.5px solid #0000;
+    border-radius: 50%;
+    border-color: #dbdcef #0000;
+    animation: spinner-e04l1k 1s infinite linear;
+ }
+ 
+ .spinner::before,
+ .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+ }
+ 
+ .spinner::before {
+    border-color: #474bff #0000;
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+ }
+ 
+ .spinner::after {
+    margin: 8.9px;
+ }
+ 
+ @keyframes spinner-e04l1k {
+    100% {
+       transform: rotate(1turn);
+    }
+ }
